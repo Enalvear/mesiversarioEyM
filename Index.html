@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Para Nosotros ❤️</title>
+  <style>
+    body {
+      font-family: Arial;
+      text-align: center;
+      background: #ffe6eb;
+    }
+    .carousel img {
+      width: 450px;
+      height: 500px;
+      border-radius: 15px;
+    }
+    button {
+      margin: 10px;
+      padding: 10px;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>💖 Nuestra Historia 💖</h1>
+
+  <div class="carousel">
+    <img id="foto" src="foto11.jpeg">
+  </div>
+
+  <br>
+  <button onclick="prev()">⬅️</button>
+  <button onclick="next()">➡️</button>
+
+  <p id="mensaje">
+    Desde que llegaste, todo es más bonito ❤️
+  </p>
+
+<script>
+  let fotos = ["foto1.jpeg", "foto2.jpeg", "foto3.jpeg","foto4.jpeg", "foto5.jpeg", "foto6.jpeg","foto7.jpeg", "foto8.jpeg", "foto9.jpeg", "foto10.jpeg", "foto11.jpeg"];
+  let index = 0;
+
+  function show() {
+    document.getElementById("foto").src = fotos[index];
+  }
+
+  function next() {
+    index = (index + 1) % fotos.length;
+    show();
+  }
+
+  function prev() {
+    index = (index - 1 + fotos.length) % fotos.length;
+    show();
+  }
+</script>
+
+</body>
+</html>
