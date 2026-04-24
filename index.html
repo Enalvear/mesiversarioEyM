@@ -360,7 +360,7 @@ body {
 // Forzar música al primer clic si el navegador la bloqueó
 document.body.addEventListener('click', () => {
     const m = document.getElementById("musica");
-	m.volume = 0.4;
+    m.volume = 0.4;
     if(m.paused) m.play();
 }, {once: true});
 
@@ -505,18 +505,26 @@ function toggleMusic(e) {
 }
 
 let fotos = ["foto2.JPEG","foto1.JPEG",  "foto3.JPEG","foto7.JPEG", "foto6.JPEG","foto13.JPEG", "foto10.JPEG", "foto9.JPEG", "Cuenca.jpg","esp.webp"];
-  let mensajes = [
+
+// --- NUEVO: PRECARGA DE IMÁGENES EN SEGUNDO PLANO ---
+fotos.forEach(function(ruta) {
+  const imgPreload = new Image();
+  imgPreload.src = ruta;
+});
+// -----------------------------------------------------
+
+let mensajes = [
     "Para mi amorcito ❤️",
     "Eres mi lugar favorito 🌍",
     "❤️ La primera vez que nos conocimos ❤️",
-	"Por más San Valentín juntos ❤️",
-	"Me encanta tu sonrisa y tu sazón 💕",
-	"Desde que te conozco siento que nada es imposible 💕",
-	"Eres mi vida y mi todo 💕",
-	"Por más locuras juntos 💕",
-	"Nuestros planes a futuro 💕",
-	"Te amo hoy mañana y siempre 💖",
-  ];
+    "Por más San Valentín juntos ❤️",
+    "Me encanta tu sonrisa y tu sazón 💕",
+    "Desde que te conozco siento que nada es imposible 💕",
+    "Eres mi vida y mi todo 💕",
+    "Por más locuras juntos 💕",
+    "Nuestros planes a futuro 💕",
+    "Te amo hoy mañana y siempre 💖",
+];
 let idx = 0;
 let timer;
 let timeoutFoto; 
